@@ -1,7 +1,11 @@
+import React from 'react';
+
 function MainContent() {
   return (
-    <main style={{ backgroundColor: '#f0f0f0', padding: '20px' }}>
-      <p>This is the main content area.</p>
+    <main style={{ padding: '20px', backgroundColor: '#f9f9f9' }}>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
     </main>
   );
 }
+
+export default MainContent;
