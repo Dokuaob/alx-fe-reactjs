@@ -1,7 +1,9 @@
 function Footer() {
   return (
-    <footer style={{ backgroundColor: 'navy', color: 'white', padding: '10px', marginTop: '20px' }}>
-      <p>&copy; 2025 Nana Dokua Obuobi</p>
+    <footer style={{ backgroundColor: '#333', color: 'white', padding: '15px', textAlign: 'center' }}>
+      <p>&copy; 2025 My Travel App</p>
     </footer>
   );
 }
+
+export default Footer;
