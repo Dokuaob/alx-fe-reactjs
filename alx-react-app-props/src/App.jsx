@@ -5,7 +5,7 @@ import UserProfile from './UserProfile.jsx';
 function App() {
   const userData = {
     name: "Jane Doe",
-    email: "jane.doe@example.com",
+    email: "jane.doe@example.com"
   };
 
   return (
