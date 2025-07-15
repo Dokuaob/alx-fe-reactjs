@@ -5,6 +5,7 @@ function UserProfile({ name, age, bio }) {
     <div
       style={{
         padding: '10px',
+        margin: '10px',
         backgroundColor: '#eee',
         border: '2px solid blue',
         color: 'black',
