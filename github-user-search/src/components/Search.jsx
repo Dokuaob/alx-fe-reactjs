@@ -64,7 +64,7 @@ const fetchUserData = () => {};
         {userList.map((user) => (
           <li key={user.id} className="border p-4 rounded shadow">
             <div className="flex items-center space-x-4">
-              <img src={user.avatar_url} alt={user.login} className="w-16 h-16 rounded-full" />
+              <img src={user.avatar_url} alt={`${user.login}'s avatar`} />
               <div>
                 <h3 className="text-lg font-bold">{user.login}</h3>
                 <a
