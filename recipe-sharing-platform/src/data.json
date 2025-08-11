@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/640x360?text=Carbonara"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken cooked in a buttery, creamy tomato-based sauce.",
+    "image": "https://via.placeholder.com/640x360?text=Tikka+Masala"
+  },
+  {
+    "id": 3,
+    "title": "Ghanaian Jollof Rice",
+    "summary": "Smoky tomato rice cooked with spices and veggies—weekend favorite!",
+    "image": "https://via.placeholder.com/640x360?text=Jollof+Rice"
+  },
+  {
+    "id": 4,
+    "title": "Veggie Stir-Fry",
+    "summary": "Colorful mixed vegetables tossed quickly in a savory stir-fry sauce.",
+    "image": "https://via.placeholder.com/640x360?text=Veggie+Stir+Fry"
+  }
+]
