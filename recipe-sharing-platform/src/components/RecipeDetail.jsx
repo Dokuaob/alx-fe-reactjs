@@ -8,20 +8,22 @@ export default function RecipeDetail() {
 
   // Load the recipe when the component mounts or when id changes
   useEffect(() => {
-    let isMounted = true;
-    import("../data.json")
-      .then((mod) => {
-        const list = mod.default || [];
-        const found = list.find((r) => Number(r.id) === recipeId);
-        if (isMounted) setRecipe(found ?? undefined);
-      })
-      .catch(() => {
-        if (isMounted) setRecipe(undefined);
-      });
-    return () => {
-      isMounted = false;
-    };
-  }, [recipeId]);
+  let isMounted = true;
+  import("../data.json")
+    .then((mod) => {
+      const fromData = mod.default || [];
+      const custom = JSON.parse(localStorage.getItem("customRecipes") || "[]");
+      const list = [...fromData, ...custom];
+      const found = list.find((r) => Number(r.id) === recipeId);
+      if (isMounted) setRecipe(found ?? undefined);
+    })
+    .catch(() => {
+      if (isMounted) setRecipe(undefined);
+    });
+  return () => {
+    isMounted = false;
+  };
+}, [recipeId]);
 
   if (recipe === null) {
     return (

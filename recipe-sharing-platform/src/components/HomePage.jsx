@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import data from "../data.json";
+import data from "../data.json"; // Vite supports JSON imports
 
 function RecipeCard({ recipe }) {
   return (
     <li className="group rounded-2xl bg-white border shadow-sm overflow-hidden transition hover:shadow-xl hover:-translate-y-0.5">
-      <Link to={`/recipe/${recipe.id}`} className="block focus:outline-none focus:ring-2 focus:ring-emerald-600">
+      <Link
+        to={`/recipe/${recipe.id}`}
+        className="block focus:outline-none focus:ring-2 focus:ring-emerald-600"
+      >
         <div className="aspect-[16/10] w-full bg-gray-100 overflow-hidden">
           <img
             src={recipe.image}
@@ -16,7 +19,9 @@ function RecipeCard({ recipe }) {
         </div>
         <div className="p-4">
           <h2 className="text-lg md:text-xl font-semibold">{recipe.title}</h2>
-          <p className="mt-1 text-sm md:text-base text-gray-600">{recipe.summary}</p>
+          <p className="mt-1 text-sm md:text-base text-gray-600">
+            {recipe.summary}
+          </p>
           <span className="mt-3 inline-block text-emerald-700 font-medium group-hover:underline">
             View details →
           </span>
@@ -28,15 +33,33 @@ function RecipeCard({ recipe }) {
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
-  useEffect(() => setRecipes(data), []);
+
+  useEffect(() => {
+    // Merge built-in mock data with user-added recipes stored in localStorage
+    const custom = JSON.parse(localStorage.getItem("customRecipes") || "[]");
+    setRecipes([...(data || []), ...custom]);
+  }, []);
+
   return (
     <main className="min-h-screen bg-gray-50">
       <section className="mx-auto max-w-7xl px-4 py-10">
-        <header className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold">Featured Recipes</h1>
-          <p className="text-gray-600 mt-1">Browse simple, tasty dishes to try at home.</p>
+        {/* Header with "Add Recipe" button */}
+        <header className="mb-8 flex items-start md:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold">Featured Recipes</h1>
+            <p className="text-gray-600 mt-1">
+              Browse simple, tasty dishes to try at home.
+            </p>
+          </div>
+          <Link
+            to="/add"
+            className="inline-flex items-center rounded-xl bg-emerald-600 text-white px-4 py-2 font-medium hover:bg-emerald-700"
+          >
+            + Add Recipe
+          </Link>
         </header>
 
+        {/* Grid of recipe cards */}
         {recipes.length === 0 ? (
           <p className="text-gray-500">No recipes found.</p>
         ) : (
