@@ -121,12 +121,12 @@ export default function AddRecipeForm() {
           </div>
 
           <div className="pt-2">
-            <button
-              type="submit"
-              className="w-full md:w-auto px-5 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition"
-            >
-              Save Recipe
-            </button>
+          <button
+  type="submit"
+  className="w-full md:w-auto px-5 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition shadow"
+>
+  Save Recipe
+</button>
           </div>
         </form>
       </section>
