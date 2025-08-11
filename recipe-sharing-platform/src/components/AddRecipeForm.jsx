@@ -29,7 +29,7 @@ export default function AddRecipeForm() {
     return { ok: Object.keys(e).length === 0, ingredients, steps };
   };
 
-  const onSubmit = (ev) => {
+  function handleSubmit(ev) {
     ev.preventDefault();
     const { ok, ingredients, steps } = validate();
     if (!ok) return;
@@ -46,9 +46,8 @@ export default function AddRecipeForm() {
     const KEY = "customRecipes";
     const existing = JSON.parse(localStorage.getItem(KEY) || "[]");
     localStorage.setItem(KEY, JSON.stringify([...existing, newRecipe]));
-
     navigate(`/recipe/${newRecipe.id}`);
-  };
+  }
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -57,7 +56,7 @@ export default function AddRecipeForm() {
         <h1 className="mt-3 text-3xl md:text-4xl font-bold">Add a New Recipe</h1>
         <p className="mt-2 text-gray-600">Fields marked * are required. Put each ingredient/step on a new line.</p>
 
-        <form onSubmit={onSubmit} noValidate className="mt-6 space-y-5">
+        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-5">
           {/* Title */}
           <div>
             <label htmlFor="title" className="block text-sm font-medium">Title *</label>
