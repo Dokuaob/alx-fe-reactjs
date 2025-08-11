@@ -3,24 +3,62 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/640x360?text=Carbonara"
+    "image": "https://via.placeholder.com/640x360?text=Carbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "100g bacon (diced)",
+      "2 eggs",
+      "40g Parmesan, grated",
+      "Salt & black pepper"
+    ],
+    "steps": [
+      "Cook spaghetti in salted water until al dente.",
+      "Fry bacon until crisp; remove from heat.",
+      "Whisk eggs with Parmesan and pepper.",
+      "Toss hot pasta with bacon, then quickly mix in egg-cheese off-heat.",
+      "Adjust seasoning and serve."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken cooked in a buttery, creamy tomato-based sauce.",
-    "image": "https://via.placeholder.com/640x360?text=Tikka+Masala"
+    "summary": "Grilled chicken pieces in a creamy tomato-based sauce.",
+    "image": "https://via.placeholder.com/640x360?text=Tikka+Masala",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "1 cup yogurt",
+      "2 tsp garam masala",
+      "1 onion, chopped",
+      "400g canned tomatoes",
+      "1/2 cup cream",
+      "Oil, salt"
+    ],
+    "steps": [
+      "Marinate chicken in yogurt + spices (30 min+).",
+      "Grill or pan-sear chicken until charred; set aside.",
+      "Sauté onions, add tomatoes; simmer.",
+      "Stir in cream and chicken; simmer 5–10 min.",
+      "Serve with rice or naan."
+    ]
   },
   {
     "id": 3,
     "title": "Ghanaian Jollof Rice",
-    "summary": "Smoky tomato rice cooked with spices and veggies—weekend favorite!",
-    "image": "https://via.placeholder.com/640x360?text=Jollof+Rice"
-  },
-  {
-    "id": 4,
-    "title": "Veggie Stir-Fry",
-    "summary": "Colorful mixed vegetables tossed quickly in a savory stir-fry sauce.",
-    "image": "https://via.placeholder.com/640x360?text=Veggie+Stir+Fry"
+    "summary": "Smoky tomato rice cooked with spices and veggies.",
+    "image": "https://via.placeholder.com/640x360?text=Jollof+Rice",
+    "ingredients": [
+      "2 cups rice",
+      "1 cup tomato purée",
+      "1 onion, sliced",
+      "1 tsp curry powder",
+      "Stock, oil, salt"
+    ],
+    "steps": [
+      "Sauté onions and spices.",
+      "Add tomato purée; cook until reduced.",
+      "Add rice and stock; simmer covered.",
+      "Steam until rice is tender and smoky.",
+      "Fluff and serve."
+    ]
   }
 ]
