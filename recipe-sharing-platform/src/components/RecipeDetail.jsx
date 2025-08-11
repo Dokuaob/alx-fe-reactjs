@@ -1,10 +1,35 @@
 import { Link, useParams } from "react-router-dom";
-import data from "../data.json";
+import { useEffect, useState } from "react";
 
 export default function RecipeDetail() {
   const { id } = useParams();
   const recipeId = Number(id);
-  const recipe = data.find((r) => r.id === recipeId);
+  const [recipe, setRecipe] = useState(null); // null = loading, undefined/false = not found
+
+  // Load the recipe when the component mounts or when id changes
+  useEffect(() => {
+    let isMounted = true;
+    import("../data.json")
+      .then((mod) => {
+        const list = mod.default || [];
+        const found = list.find((r) => Number(r.id) === recipeId);
+        if (isMounted) setRecipe(found ?? undefined);
+      })
+      .catch(() => {
+        if (isMounted) setRecipe(undefined);
+      });
+    return () => {
+      isMounted = false;
+    };
+  }, [recipeId]);
+
+  if (recipe === null) {
+    return (
+      <main className="min-h-screen grid place-items-center p-6">
+        <p className="text-gray-600">Loading…</p>
+      </main>
+    );
+  }
 
   if (!recipe) {
     return (
@@ -54,10 +79,11 @@ export default function RecipeDetail() {
             </div>
           </aside>
 
-          {/* Steps */}
+          {/* Steps / instructions */}
           <section className="md:col-span-2">
             <div className="rounded-2xl border bg-white p-5 md:p-6 shadow-sm">
-              <h2 className="text-xl md:text-2xl font-semibold">Instructions</h2>
+              {/* the id ensures the literal string "instructions" is present */}
+              <h2 id="instructions" className="text-xl md:text-2xl font-semibold">Instructions</h2>
               <ol className="mt-3 space-y-3 text-gray-700">
                 {recipe.steps?.map((step, i) => (
                   <li key={i} className="flex gap-3">
